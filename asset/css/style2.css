@@ -1,0 +1,29 @@
+.content {
+    padding: 100px 10px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.left img {
+    width: 30vw;
+    height: 70vh;
+    border-radius: 25px;
+}
+
+.content_page {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.current_page {
+    margin: 0 8px; 
+}
+
+.content_page i {
+    cursor: pointer;
+}
+
+.current_page input {
+    width: 24px;
+}
