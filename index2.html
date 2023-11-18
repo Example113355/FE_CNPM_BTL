@@ -42,30 +42,34 @@
             <img src="https://th.bing.com/th/id/R.1a7d1fa7f98dd3a4557abe44a8cc25cb?rik=O4E%2bwrR15i0www&pid=ImgRaw&r=0&sres=1&sresct=1" alt="">
 
             <div class="content_page">
-                <i class="fa-solid fa-angle-left"></i>
+                <i onclick="decCurPage()" class="increase fa-solid fa-angle-left"></i>
 
                 <div class="current_page">
                     <input type="text" value="15">
                     <span>/<span class="total">20</span></span>
                 </div>
 
-                <i class="fa-solid fa-angle-right"></i>
+                <i onclick="incCurPage()" class="decrease fa-solid fa-angle-right"></i>
             </div>
         </div>
 
         <div class="right">
-            <form action="post">
-                <div class="form_item">
-                    Cửa hàng in: 
-                    <select name="shop" id="shop">
-                        <option value="option_1">Tiệm in XYZ, đường ABC, phường DEF, quận GHI, thành phố Hồ Chí Minh</option>
-                        <option value="option_2">Tiệm in XYZ, đường ABC, phường DEF, quận GHI, thành phố Hồ Chí Minh</option>
-                    </select>
+            <div class="form_item">
+                Cửa hàng in:
+                <div class="dropdown">
+                    <input onclick="myFunction(event)" class="drop" placeholder="Chọn cửa hàng in" readonly>
+                    <i class="fa-solid fa-angle-down"></i>
+                    <div id="myDropdown" class="dropdown-content">
+                        <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+                        <a onclick="changeInput(event)" href="#">Tiệm in abc, đường xyz, phường def, quận ghi, thành phố Hồ Chí Minh</a>
+                        <a onclick="changeInput(event)" href="#">Tiệm in bcd, đường xyz, phường def, quận ghi, thành phố Hồ Chí Minh</a>
+                    </div>
                 </div>
-
+            </div>
+            <form action="post" method="">
                 <div class="form_item">
                     Máy in: 
-                    <select name="printer" id="printer">
+                    <select name="printer" id="select printer">
                         <option value="option_1">Máy in 1 (in trắng đen, 2 mặt)</option>
                         <option value="option_2">Máy in 2 (in trắng đen, 2 mặt)</option>
                     </select>
@@ -75,10 +79,11 @@
     </article>
 
     <div class="footer">
-        <button type="button">Hủy</button>
-        <button type="button">Tiếp theo</button>
+        <button type="button" class="cancel">Hủy</button>
+        <button type="button" class="continue">Tiếp theo</button>
     </div>
 
     <script src="./asset/js/main.js"></script>
+    <script src="./asset/js/dropdown.js"></script>
 </body>
 </html>
